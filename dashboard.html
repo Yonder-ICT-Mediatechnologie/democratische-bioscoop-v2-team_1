@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
     <nav class="bg-black border-b-4 border-gray-800">
@@ -21,14 +23,14 @@
                 <div class="hidden md:flex gap-8 items-center">
                     <a href="dashboard.html" class="text-red-500 border-b-2 border-red-500 pb-1 font-medium">home</a>
                     <a href="films.html" class="text-white hover:text-red-500 transition font-medium">films</a>
-                    <a href="#" class="text-white hover:text-red-500 transition font-medium">kies de film</a>
                     <a href="#" class="text-white hover:text-red-500 transition font-medium">contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden text-white" id="mobileMenuBtn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
 
@@ -36,8 +38,8 @@
                 <div class="flex items-center">
                     <button class="text-red-500 hover:text-red-400 transition">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <circle cx="12" cy="8" r="4"/>
-                            <path d="M12 14c-6 0-8 3-8 5v5h16v-5c0-2-2-5-8-5z"/>
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M12 14c-6 0-8 3-8 5v5h16v-5c0-2-2-5-8-5z" />
                         </svg>
                     </button>
                 </div>
@@ -47,7 +49,6 @@
             <div class="hidden md:hidden pb-4" id="mobileNav">
                 <a href="dashboard.html" class="block text-red-500 py-2 font-medium">home</a>
                 <a href="films.html" class="block text-white hover:text-red-500 py-2">films</a>
-                <a href="#" class="block text-white hover:text-red-500 py-2">kies de film</a>
                 <a href="#" class="block text-white hover:text-red-500 py-2">contact</a>
             </div>
         </div>
@@ -59,18 +60,32 @@
             <!-- Carousel Container -->
             <div class="relative h-80 sm:h-96 md:h-[32rem] overflow-hidden">
                 <!-- Carousel Item -->
-                <div class="relative w-full h-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-600 flex items-center justify-center">
+                <div
+                    class="relative w-full h-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-600 flex items-center justify-center">
                     <img src="img/Aladdin.png" alt="Aladdin" class="w-full h-full object-cover opacity-60">
-                    
+
                     <!-- Content Overlay -->
-                    <div class="absolute inset-0 flex flex-col justify-center items-start p-6 sm:p-10 md:p-16 bg-gradient-to-r from-black/70 to-transparent">
-                        <div class="max-w-md ml-4 sm:ml-8">
+                    <div class="absolute inset-0 p-6 sm:p-10 md:p-16 bg-gradient-to-r from-black/70 to-transparent">
+                        <!-- Bottom Content (Left) -->
+                        <div class="max-w-md absolute left-6 sm:left-10 md:left-16 bottom-24 sm:bottom-20 md:bottom-16">
                             <div class="mb-4">
-                                <span class="inline-block bg-red-600 text-white px-3 py-1 rounded text-xs sm:text-sm font-bold">NU DRAAIEND</span>
+                                <span
+                                    class="inline-block bg-red-600 text-white px-3 py-1 rounded text-xs sm:text-sm font-bold">NU
+                                    DRAAIEND</span>
                             </div>
                             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white">Aladdin</h1>
-                            <p class="text-sm sm:text-base text-gray-200 mb-4">1u 30min · ★ 8,4 · 6+</p>
-                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 sm:px-6 rounded flex items-center gap-2 transition">
+                            <div class="flex items-center gap-3 text-sm sm:text-base text-gray-200">
+                                <span>1u 30min · ★ 8,4</span>
+                                <div
+                                    class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    6</div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Content (Right) -->
+                        <div class="absolute right-6 sm:right-10 md:right-16 bottom-16 md:bottom-16">
+                            <button
+                                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 sm:px-6 rounded flex items-center gap-2 transition">
                                 <span>🎫</span> Koop Tickets
                             </button>
                         </div>
@@ -78,21 +93,24 @@
                 </div>
 
                 <!-- Previous Button -->
-                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
+                <button
+                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
                     </svg>
                 </button>
 
                 <!-- Next Button -->
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
+                <button
+                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
 
-                <!-- Carousel Indicators (Mobile Only) -->
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 md:hidden">
+                <!-- Carousel Indicators -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                     <div class="w-2 h-2 bg-white rounded-full"></div>
                     <div class="w-2 h-2 bg-white/50 rounded-full"></div>
                     <div class="w-2 h-2 bg-white/50 rounded-full"></div>
@@ -103,7 +121,107 @@
         </div>
     </section>
 
-    <!-- Film Planning Section -->
+    <!-- Kies de Film Sectie -->
+    <section class="bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Kies de Film</h2>
+                <p class="text-gray-300">stem op de film die je vrijdag wilt zien</p>
+            </div>
+
+            <!-- Desktop Grid -->
+            <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Film Card 1: Aladdin -->
+                <div class="group cursor-pointer flex flex-col h-full">
+                    <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+                        <img src="img/films/Aladdin2.png" alt="Aladdin"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    </div>
+                    <div class="flex flex-col justify-between flex-grow">
+                        <h3 class="font-bold text-lg mb-3">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Film Card 2: Aladdin -->
+                <div class="group cursor-pointer flex flex-col h-full">
+                    <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+                        <img src="img/films/Aladdin2.png" alt="Aladdin"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    </div>
+                    <div class="flex flex-col justify-between flex-grow">
+                        <h3 class="font-bold text-lg mb-3">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Film Card 3: Aladdin -->
+                <div class="group cursor-pointer flex flex-col h-full">
+                    <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+                        <img src="img/films/Aladdin2.png" alt="Aladdin"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    </div>
+                    <div class="flex flex-col justify-between flex-grow">
+                        <h3 class="font-bold text-lg mb-3">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Carousel -->
+            <div class="md:hidden overflow-x-auto pb-4">
+                <div class="flex gap-4" style="scroll-behavior: smooth;">
+                    <!-- Film Card 1 -->
+                    <div class="flex-shrink-0 w-52 group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                            <img src="img/films/Aladdin2.png" alt="Aladdin"
+                                class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <h3 class="font-bold text-md mb-2">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+
+                    <!-- Film Card 2 -->
+                    <div class="flex-shrink-0 w-52 group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                            <img src="img/films/Aladdin2.png" alt="Aladdin"
+                                class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <h3 class="font-bold text-md mb-2">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+
+                    <!-- Film Card 3 -->
+                    <div class="flex-shrink-0 w-52 group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                            <img src="img/films/Aladdin2.png" alt="Aladdin"
+                                class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <h3 class="font-bold text-md mb-2">Aladdin</h3>
+                        <button
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">
+                            Stem op deze film
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-gray-900 py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Title -->
@@ -154,10 +272,14 @@
                             </td>
                             <td class="py-6 px-4">
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:30</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">15:15</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">18:00</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">15:15</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">18:00</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:30</span>
                                 </div>
                             </td>
                         </tr>
@@ -175,10 +297,14 @@
                             </td>
                             <td class="py-6 px-4">
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">10:45</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:00</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">16:30</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">20:00</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">10:45</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:00</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">16:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">20:00</span>
                                 </div>
                             </td>
                         </tr>
@@ -196,10 +322,14 @@
                             </td>
                             <td class="py-6 px-4">
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">09:30</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:15</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">17:30</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">22:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">09:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:15</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">17:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">22:30</span>
                                 </div>
                             </td>
                         </tr>
@@ -217,10 +347,14 @@
                             </td>
                             <td class="py-6 px-4">
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:30</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">14:45</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">19:00</span>
-                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:00</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:30</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">14:45</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">19:00</span>
+                                    <span
+                                        class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:00</span>
                                 </div>
                             </td>
                         </tr>
@@ -240,10 +374,14 @@
                         <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:30</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">15:15</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">18:00</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">15:15</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">18:00</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:30</span>
                     </div>
                 </div>
 
@@ -257,10 +395,14 @@
                         <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">10:45</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:00</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">16:30</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">20:00</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">10:45</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:00</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">16:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">20:00</span>
                     </div>
                 </div>
 
@@ -274,10 +416,14 @@
                         <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">09:30</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:15</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">17:30</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">22:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">09:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:15</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">17:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">22:30</span>
                     </div>
                 </div>
 
@@ -291,10 +437,14 @@
                         <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:30</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">14:45</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">19:00</span>
-                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:00</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:30</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">14:45</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">19:00</span>
+                        <span
+                            class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:00</span>
                     </div>
                 </div>
             </div>
@@ -304,4 +454,5 @@
     <script src="js/rest.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
+
 </html>

@@ -1,15 +1,5 @@
 /* Films Page Custom CSS */
 
-/* Film Cards Hover Lift Effect */
-.hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(239, 68, 68, 0.3);
-}
-
 /* Search Input Styling */
 #searchInput {
     transition: all 0.3s ease;
@@ -21,38 +11,34 @@
 
 /* Mobile Carousel Scrollbar Styling */
 .overflow-x-auto {
-    scrollbar-width: thin;
-    scrollbar-color: #dc2626 #1f2937;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .overflow-x-auto::-webkit-scrollbar {
-    height: 6px;
+    display: none;
 }
 
-.overflow-x-auto::-webkit-scrollbar-track {
-    background: #1f2937;
+/* Carousel Container */
+#nuTeZienCarousel,
+#kidsCarousel {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.overflow-x-auto::-webkit-scrollbar-thumb {
-    background: #dc2626;
-    border-radius: 10px;
+#nuTeZienCarousel::-webkit-scrollbar,
+#kidsCarousel::-webkit-scrollbar {
+    display: none;
 }
 
-.overflow-x-auto::-webkit-scrollbar-thumb:hover {
-    background: #ef4444;
-}
-
-/* Film Card Image Hover */
-.overflow-hidden img {
-    transition: transform 0.3s ease;
-}
-
-/* Fade in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

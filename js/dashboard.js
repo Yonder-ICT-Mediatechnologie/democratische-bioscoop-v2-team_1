@@ -69,3 +69,30 @@ timeSlots.forEach(slot => {
         // Add booking logic here
     });
 });
+
+// Vote for film buttons
+const voteButtons = document.querySelectorAll('button:contains("Stem op deze film")');
+document.querySelectorAll('button').forEach(button => {
+    if (button.textContent.includes('Stem op deze film')) {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const filmCard = this.closest('div[class*="group cursor-pointer"]');
+            const filmTitle = filmCard.querySelector('h3').textContent;
+            
+            // Visual feedback
+            const originalText = this.textContent;
+            this.textContent = '✓ Gestemd!';
+            this.classList.remove('hover:bg-red-700');
+            this.classList.add('bg-green-600');
+            
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.classList.remove('bg-green-600');
+                this.classList.add('hover:bg-red-700');
+            }, 2000);
+            
+            console.log('Voted for:', filmTitle);
+            // Add API call here to save vote
+        });
+    }
+});
