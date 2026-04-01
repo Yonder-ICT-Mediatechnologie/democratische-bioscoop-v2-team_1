@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Panda Bioscoop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-black border-b-4 border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img src="img/Logo.png" alt="Panda Bioscoop" class="h-12 w-auto">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="dashboard.html" class="text-red-500 border-b-2 border-red-500 pb-1 font-medium">home</a>
+                    <a href="films.html" class="text-white hover:text-red-500 transition font-medium">films</a>
+                    <a href="#" class="text-white hover:text-red-500 transition font-medium">kies de film</a>
+                    <a href="#" class="text-white hover:text-red-500 transition font-medium">contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white" id="mobileMenuBtn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Login Icon -->
+                <div class="flex items-center">
+                    <button class="text-red-500 hover:text-red-400 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M12 14c-6 0-8 3-8 5v5h16v-5c0-2-2-5-8-5z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="hidden md:hidden pb-4" id="mobileNav">
+                <a href="dashboard.html" class="block text-red-500 py-2 font-medium">home</a>
+                <a href="films.html" class="block text-white hover:text-red-500 py-2">films</a>
+                <a href="#" class="block text-white hover:text-red-500 py-2">kies de film</a>
+                <a href="#" class="block text-white hover:text-red-500 py-2">contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel Section -->
+    <section class="relative bg-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <!-- Carousel Container -->
+            <div class="relative h-80 sm:h-96 md:h-[32rem] overflow-hidden">
+                <!-- Carousel Item -->
+                <div class="relative w-full h-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-600 flex items-center justify-center">
+                    <img src="img/Aladdin.png" alt="Aladdin" class="w-full h-full object-cover opacity-60">
+                    
+                    <!-- Content Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-start p-6 sm:p-10 md:p-16 bg-gradient-to-r from-black/70 to-transparent">
+                        <div class="max-w-md ml-4 sm:ml-8">
+                            <div class="mb-4">
+                                <span class="inline-block bg-red-600 text-white px-3 py-1 rounded text-xs sm:text-sm font-bold">NU DRAAIEND</span>
+                            </div>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white">Aladdin</h1>
+                            <p class="text-sm sm:text-base text-gray-200 mb-4">1u 30min · ★ 8,4 · 6+</p>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 sm:px-6 rounded flex items-center gap-2 transition">
+                                <span>🎫</span> Koop Tickets
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Button -->
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+                <!-- Next Button -->
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Carousel Indicators (Mobile Only) -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 md:hidden">
+                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/50 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/50 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/50 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/50 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Film Planning Section -->
+    <section class="bg-gray-900 py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Title -->
+            <div class="mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold">
+                    FILM<span class="text-red-600">PLANNING</span>
+                </h2>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 mb-8">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition">
+                    Vandaag
+                </button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">
+                    Morgen
+                </button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">
+                    Za 15
+                </button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">
+                    Zo 16
+                </button>
+            </div>
+
+            <!-- Desktop Table View -->
+            <div class="hidden md:block overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-gray-700">
+                            <th class="text-left py-4 px-4 font-bold text-gray-300">Film</th>
+                            <th class="text-left py-4 px-4 font-bold text-gray-300">Leeftijd</th>
+                            <th class="text-left py-4 px-4 font-bold text-gray-300">Taal</th>
+                            <th class="text-left py-4 px-4 font-bold text-gray-300">Speeltijden</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Film Row 1 -->
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                            <td class="py-6 px-4">
+                                <p class="font-bold text-lg">Aladdin</p>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="text-gray-300 text-sm">NL gesproken</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:30</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">15:15</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">18:00</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:30</span>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Film Row 2 -->
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                            <td class="py-6 px-4">
+                                <p class="font-bold text-lg">The Lion King</p>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="text-gray-300 text-sm">NL gesproken</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">10:45</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:00</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">16:30</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">20:00</span>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Film Row 3 -->
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                            <td class="py-6 px-4">
+                                <p class="font-bold text-lg">Avatar: Fire and Ash</p>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="text-gray-300 text-sm">NL ondertiteld</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">09:30</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:15</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">17:30</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">22:30</span>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Film Row 4 -->
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                            <td class="py-6 px-4">
+                                <p class="font-bold text-lg">Jurassic World Rebirth</p>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <span class="text-gray-300 text-sm">NL ondertiteld</span>
+                            </td>
+                            <td class="py-6 px-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:30</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">14:45</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">19:00</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:00</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Card View -->
+            <div class="md:hidden space-y-4">
+                <!-- Film Card 1 -->
+                <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">Aladdin</h3>
+                            <p class="text-gray-300 text-sm">1u 30min · NL gesproken</p>
+                        </div>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:30</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">15:15</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">18:00</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:30</span>
+                    </div>
+                </div>
+
+                <!-- Film Card 2 -->
+                <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">The Lion King</h3>
+                            <p class="text-gray-300 text-sm">1u 30min · NL gesproken</p>
+                        </div>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">10:45</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:00</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">16:30</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">20:00</span>
+                    </div>
+                </div>
+
+                <!-- Film Card 3 -->
+                <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">Avatar: Fire and Ash</h3>
+                            <p class="text-gray-300 text-sm">1u 30min · NL ondertiteld</p>
+                        </div>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">09:30</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:15</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">17:30</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">22:30</span>
+                    </div>
+                </div>
+
+                <!-- Film Card 4 -->
+                <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">Jurassic World Rebirth</h3>
+                            <p class="text-gray-300 text-sm">1u 30min · NL ondertiteld</p>
+                        </div>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:30</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">14:45</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">19:00</span>
+                        <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/rest.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
