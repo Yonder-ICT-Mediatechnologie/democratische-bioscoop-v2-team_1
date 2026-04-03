@@ -3,7 +3,7 @@
 Dit project gaat verder op de resultaten van de bioscoop-app die jullie hebben ontwikkeld voor het vak Interaction Design.
 Met groepjes van twee ga je een van de aangeleverde ontwerpen uitwerken in html, css en javascript.
 
-De actieve website staat nu in [New project/index.html](New%20project/index.html) met de bijbehorende pagina's en serverbestanden in [New project](New%20project).
+De actieve website staat nu in [index.html](index.html) met de bijbehorende pagina's en serverbestanden in de hoofdmap van deze repository.
 
 ## Tijd
 **Let op**: Je krijgt op school 4 lesuren per week (8 weken in totaal, dus 32 lesuren, 24 klokuren). Dat is niet veel, het is daarom nodig om minimaal twee klokuren per week  thuis aan deze opdracht te werken. Dan kom je op 40 klokuur: een werkweek.

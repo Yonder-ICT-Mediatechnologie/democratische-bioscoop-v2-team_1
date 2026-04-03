@@ -1,5 +1,4 @@
 # Project exclude paths
 /node_modules/
 .idea
-/New project/node_modules/
-/New project/cinema.db
+/cinema.db
