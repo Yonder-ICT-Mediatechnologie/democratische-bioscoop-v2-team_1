@@ -118,6 +118,3 @@ Inloggen werkt niet:
 Wijzigingen niet zichtbaar:
 - Hard refresh in browser (`Ctrl+F5`).
 - Controleer of je de juiste branch en laatste commits hebt.
-
-## Notitie
-Deze README is gericht op praktisch gebruik van dit project. Opdrachtinformatie en beoordelingscriteria kun je eventueel apart bewaren in documentatiebestanden als dat nodig is.
