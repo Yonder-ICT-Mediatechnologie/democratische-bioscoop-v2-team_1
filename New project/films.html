@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Films</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-overview">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Panda Cinema home">
+        <span class="brand-mark">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Cinema logo">
+        </span>
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-links">
+          <li><a href="index.html">home</a></li>
+          <li><a class="is-current" href="films.html">films</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="account-button" href="login.html" aria-label="Mijn account"></a>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <section class="catalog-search" id="zoek">
+      <div class="container">
+        <h1 class="sr-only">Films overzicht</h1>
+
+        <form class="catalog-searchbar" data-film-search role="search">
+          <label class="sr-only" for="film-search">Zoek een film</label>
+          <span class="catalog-search__icon" aria-hidden="true"></span>
+          <input id="film-search" type="search" placeholder="Zoeken..." autocomplete="off">
+          <button class="catalog-search__button" type="submit" aria-label="Zoeken"></button>
+        </form>
+
+        <p class="catalog-empty" data-empty-state hidden>Geen films gevonden met deze zoekopdracht.</p>
+      </div>
+    </section>
+
+    <section class="catalog-section" data-catalog-section>
+      <div class="container">
+        <h2>Nu te zien</h2>
+
+        <div class="catalog-grid">
+          <article class="movie-card movie-card--aladdin" data-search-card data-title="Aladdin" data-category="nu te zien fantasy family">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=aladdin" aria-label="Reserveer stoelen voor Aladdin">
+              <span class="movie-card__poster-tag">Disney</span>
+              <strong class="movie-card__poster-mark">ALADDIN</strong>
+              <span class="movie-card__poster-note">Magic adventure</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Aladdin</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--mike-molly" data-search-card data-title="Mike & Molly vieren feest" data-category="nu te zien family kids">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=mike-molly-vieren-feest" aria-label="Reserveer stoelen voor Mike en Molly vieren feest">
+              <span class="movie-card__poster-tag">Family</span>
+              <strong class="movie-card__poster-mark">M&amp;M</strong>
+              <span class="movie-card__poster-note">Vieren feest</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Mike &amp; Molly vieren feest</h2>
+              <span class="movie-card__age">E</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--avatar" data-search-card data-title="Avatar: Fire and Ash" data-category="nu te zien sci-fi action">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=avatar-fire-ash" aria-label="Reserveer stoelen voor Avatar Fire and Ash">
+              <span class="movie-card__poster-tag">Sci-fi event</span>
+              <strong class="movie-card__poster-mark">AVATAR</strong>
+              <span class="movie-card__poster-note">Fire and Ash</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Avatar: Fire and Ash</h2>
+              <span class="movie-card__age">12</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--bershama" data-search-card data-title="Bershama" data-category="nu te zien drama">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=bershama" aria-label="Reserveer stoelen voor Bershama">
+              <span class="movie-card__poster-tag">Drama</span>
+              <strong class="movie-card__poster-mark">BERSHAMA</strong>
+              <span class="movie-card__poster-note">Avondpremiere</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Bershama</h2>
+              <span class="movie-card__age">16</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--krol" data-search-card data-title="Krol Dopalaczy" data-category="nu te zien action">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=krol-dopalaczy" aria-label="Reserveer stoelen voor Krol Dopalaczy">
+              <span class="movie-card__poster-tag">Action</span>
+              <strong class="movie-card__poster-mark">KROL</strong>
+              <span class="movie-card__poster-note">Dopalaczy</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Krol Dopalaczy</h2>
+              <span class="movie-card__age">16</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--hail-mary" data-search-card data-title="Project Hail Mary" data-category="nu te zien sci-fi">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=project-hail-mary" aria-label="Reserveer stoelen voor Project Hail Mary">
+              <span class="movie-card__poster-tag">Sci-fi</span>
+              <strong class="movie-card__poster-mark">HAIL MARY</strong>
+              <span class="movie-card__poster-note">Project</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Project Hail Mary</h2>
+              <span class="movie-card__age">12</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--super-charlie" data-search-card data-title="Super Charlie" data-category="nu te zien kids family">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=super-charlie" aria-label="Reserveer stoelen voor Super Charlie">
+              <span class="movie-card__poster-tag">Family fun</span>
+              <strong class="movie-card__poster-mark">SUPER</strong>
+              <span class="movie-card__poster-note">Charlie</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Super Charlie</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--jumpers" data-search-card data-title="Jumpers" data-category="nu te zien kids family">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=jumpers" aria-label="Reserveer stoelen voor Jumpers">
+              <span class="movie-card__poster-tag">Animation</span>
+              <strong class="movie-card__poster-mark">JUMPERS</strong>
+              <span class="movie-card__poster-note">Big leap adventure</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Jumpers</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" data-catalog-section>
+      <div class="container">
+        <h2>Kids</h2>
+
+        <div class="catalog-grid">
+          <article class="movie-card movie-card--jumpers" data-search-card data-title="Jumpers" data-category="kids animation family">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=jumpers" aria-label="Reserveer stoelen voor Jumpers">
+              <span class="movie-card__poster-tag">Animation</span>
+              <strong class="movie-card__poster-mark">JUMPERS</strong>
+              <span class="movie-card__poster-note">Big leap adventure</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Jumpers</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--super-charlie" data-search-card data-title="Super Charlie" data-category="kids animation family">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=super-charlie" aria-label="Reserveer stoelen voor Super Charlie">
+              <span class="movie-card__poster-tag">Family fun</span>
+              <strong class="movie-card__poster-mark">SUPER</strong>
+              <span class="movie-card__poster-note">Charlie</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Super Charlie</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--goat" data-search-card data-title="GOAT" data-category="kids comedy animation">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=goat" aria-label="Reserveer stoelen voor GOAT">
+              <span class="movie-card__poster-tag">Comedy</span>
+              <strong class="movie-card__poster-mark">GOAT</strong>
+              <span class="movie-card__poster-note">Chaos op de boerderij</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>GOAT</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--miss-moxy" data-search-card data-title="Miss Moxy" data-category="kids animation">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=miss-moxy" aria-label="Reserveer stoelen voor Miss Moxy">
+              <span class="movie-card__poster-tag">Adventure</span>
+              <strong class="movie-card__poster-mark">MOXY</strong>
+              <span class="movie-card__poster-note">Kleurrijke missie</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Miss Moxy</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--zootropolis" data-search-card data-title="ZooTropolis 2" data-category="kids family animation">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=zootropolis-2" aria-label="Reserveer stoelen voor ZooTropolis 2">
+              <span class="movie-card__poster-tag">Family hit</span>
+              <strong class="movie-card__poster-mark">ZOO 2</strong>
+              <span class="movie-card__poster-note">Nieuwe stad, nieuw mysterie</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>ZooTropolis 2</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--mike-molly" data-search-card data-title="Mike & Molly vieren feest" data-category="kids family comedy">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=mike-molly-vieren-feest" aria-label="Reserveer stoelen voor Mike en Molly vieren feest">
+              <span class="movie-card__poster-tag">Family</span>
+              <strong class="movie-card__poster-mark">M&amp;M</strong>
+              <span class="movie-card__poster-note">Vieren feest</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Mike &amp; Molly vieren feest</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--spongebob" data-search-card data-title="Spongebob op piratenpad" data-category="kids animation comedy">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=spongebob-op-piratenpad" aria-label="Reserveer stoelen voor Spongebob op piratenpad">
+              <span class="movie-card__poster-tag">Comedy splash</span>
+              <strong class="movie-card__poster-mark">SPONGEBOB</strong>
+              <span class="movie-card__poster-note">Op piratenpad</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Spongebob op piratenpad</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+
+          <article class="movie-card movie-card--mario" data-search-card data-title="Mario Galaxy" data-category="kids animation adventure">
+            <a class="movie-card__poster" href="zitplaatsen.html?film=mario-galaxy" aria-label="Reserveer stoelen voor Mario Galaxy">
+              <span class="movie-card__poster-tag">Adventure</span>
+              <strong class="movie-card__poster-mark">MARIO</strong>
+              <span class="movie-card__poster-note">Galaxy run</span>
+            </a>
+            <div class="movie-card__meta">
+              <h2>Mario Galaxy</h2>
+              <span class="movie-card__age">6</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="films.js"></script>
+</body>
+</html>

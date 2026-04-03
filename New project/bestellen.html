@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Jouw Bestelling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-checkout">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Panda Cinema home">
+        <span class="brand-mark">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Cinema logo">
+        </span>
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-links">
+          <li><a href="index.html">home</a></li>
+          <li><a href="films.html">films</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="account-button" href="login.html" aria-label="Mijn account"></a>
+    </div>
+  </header>
+
+  <main class="checkout-page-main">
+    <section class="checkout-section">
+      <div class="container checkout-layout">
+        <section class="checkout-order">
+          <h1>Jouw bestelling</h1>
+
+          <div class="order-card">
+            <div class="order-card__poster order-card__poster--aladdin" data-order-poster>
+              <span class="order-card__studio">Disney</span>
+              <strong class="order-card__mark" data-order-poster-mark>Aladdin</strong>
+            </div>
+
+            <div class="order-card__content">
+              <h2 data-order-title>Titel</h2>
+
+              <div class="order-tags">
+                <span class="order-tag order-tag--blue" data-order-genre>Genre</span>
+                <span class="order-tag order-tag--gold" data-order-format>3D</span>
+                <span class="order-tag order-tag--red" data-order-language>NL ondertiteld</span>
+              </div>
+
+              <div class="order-meta">
+                <div>
+                  <h3>Datum</h3>
+                  <p data-order-date>dd/mm/jjjj</p>
+                </div>
+                <div>
+                  <h3>Tijd</h3>
+                  <p data-order-time>00:00</p>
+                </div>
+                <div>
+                  <h3>zaal</h3>
+                  <p data-order-hall>zaal #</p>
+                </div>
+                <div>
+                  <h3>duur</h3>
+                  <p data-order-duration>0m 0m</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-card__divider"></div>
+
+            <div class="order-seats">
+              <h3>Geselecteerde stoelen</h3>
+              <div class="order-seat-list" data-order-seats></div>
+            </div>
+          </div>
+
+          <div class="checkout-actions checkout-actions--left">
+            <a class="checkout-button checkout-button--back" href="zitplaatsen.html">terug naar stoelen</a>
+          </div>
+        </section>
+
+        <aside class="checkout-summary">
+          <div class="summary-card">
+            <div class="summary-card__head">
+              <h2>Overzicht</h2>
+            </div>
+
+            <div class="summary-card__body">
+              <div class="summary-line">
+                <span data-order-count>3x standaard stoel</span>
+                <strong data-order-subtotal>EUR36,00</strong>
+              </div>
+
+              <div class="summary-total">
+                <span>Totaal</span>
+                <strong data-order-total>EUR36,00</strong>
+              </div>
+
+              <div class="payment-box">
+                <h3>Betaalmethode</h3>
+
+                <div class="payment-methods">
+                  <button class="payment-method" type="button" data-payment-method="iDEAL" aria-pressed="false">
+                    <span class="payment-method__icon payment-method__icon--ideal"></span>
+                    <span>iDEAL</span>
+                  </button>
+                  <button class="payment-method" type="button" data-payment-method="Klarna" aria-pressed="false">
+                    <span class="payment-method__icon payment-method__icon--klarna"></span>
+                    <span>KLARNA</span>
+                  </button>
+                  <button class="payment-method" type="button" data-payment-method="PayPal" aria-pressed="false">
+                    <span class="payment-method__icon payment-method__icon--paypal"></span>
+                    <span>PayPal</span>
+                  </button>
+                  <button class="payment-method" type="button" data-payment-method="Apple Pay" aria-pressed="false">
+                    <span class="payment-method__icon payment-method__icon--apple"></span>
+                    <span>Apple Pay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gast e-mail (getoond als je niet bent ingelogd) -->
+          <div class="guest-email-box" id="guest-email-box" style="display:none">
+            <div class="guest-email-icon" aria-hidden="true">✉</div>
+            <h3 class="guest-email-title">Tickets per e-mail ontvangen</h3>
+            <p class="guest-email-desc">Je bent niet ingelogd. Vul je e-mailadres in en wij sturen je tickets naar dit adres.</p>
+            <input
+              type="email"
+              id="guest-email-input"
+              class="guest-email-input"
+              placeholder="jouw@email.nl"
+              autocomplete="email"
+            >
+            <p class="guest-email-hint">
+              Liever tickets in je account opslaan?
+              <a href="login.html">Inloggen</a> of <a href="registreren.html">registreren</a>
+            </p>
+          </div>
+
+          <div class="checkout-actions checkout-actions--right">
+            <button class="checkout-button checkout-button--pay" type="button" data-pay-now disabled>Betaal nu</button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container">
+        <p class="checkout-message" data-checkout-message></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="bestellen.js"></script>
+</body>
+</html>

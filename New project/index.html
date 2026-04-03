@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <nav class="bg-black border-b-4 border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Bioscoop" class="h-12 w-auto">
+        </div>
+
+        <div class="hidden md:flex gap-8 items-center">
+          <a href="index.html" class="text-red-500 border-b-2 border-red-500 pb-1 font-medium">home</a>
+          <a href="films.html" class="text-white hover:text-red-500 transition font-medium">films</a>
+          <a href="contact.html" class="text-white hover:text-red-500 transition font-medium">contact</a>
+        </div>
+
+        <button class="md:hidden text-white" id="mobileMenuBtn" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div class="flex items-center">
+          <a href="login.html" class="text-red-500 hover:text-red-400 transition" aria-label="Mijn account">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M12 14c-6 0-8 3-8 5v5h16v-5c0-2-2-5-8-5z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:hidden pb-4" id="mobileNav">
+        <a href="index.html" class="block text-red-500 py-2 font-medium">home</a>
+        <a href="films.html" class="block text-white hover:text-red-500 py-2">films</a>
+        <a href="contact.html" class="block text-white hover:text-red-500 py-2">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative bg-gray-800 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="relative h-80 sm:h-96 md:h-[32rem] overflow-hidden">
+          <div class="relative w-full h-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-600 flex items-center justify-center">
+            <img src="css_zip_import/img/Aladdin.png" alt="Aladdin" class="w-full h-full object-cover opacity-60">
+
+            <div class="absolute inset-0 p-6 sm:p-10 md:p-16 bg-gradient-to-r from-black/70 to-transparent">
+              <div class="max-w-md absolute left-6 sm:left-10 md:left-16 bottom-24 sm:bottom-20 md:bottom-16">
+                <div class="mb-4">
+                  <span class="inline-block bg-red-600 text-white px-3 py-1 rounded text-xs sm:text-sm font-bold">NU DRAAIEND</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white">Aladdin</h1>
+                <div class="flex items-center gap-3 text-sm sm:text-base text-gray-200">
+                  <span>1u 30min &middot; &#9733; 8,4</span>
+                  <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                </div>
+              </div>
+
+              <div class="absolute right-6 sm:right-10 md:right-16 bottom-16 md:bottom-16">
+                <a href="zitplaatsen.html?film=aladdin" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 sm:px-6 rounded flex items-center gap-2 transition">
+                  <span>&#127915;</span> Koop Tickets
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10" type="button" data-slide-action="prev" aria-label="Vorige film">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+
+          <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded transition z-10" type="button" data-slide-action="next" aria-label="Volgende film">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" aria-label="Film selector">
+            <button class="w-2 h-2 bg-white rounded-full" type="button" aria-label="Ga naar Aladdin" data-slide-index="0"></button>
+            <button class="w-2 h-2 bg-white/50 rounded-full" type="button" aria-label="Ga naar Avatar Fire and Ash" data-slide-index="1"></button>
+            <button class="w-2 h-2 bg-white/50 rounded-full" type="button" aria-label="Ga naar Project Hail Mary" data-slide-index="2"></button>
+            <button class="w-2 h-2 bg-white/50 rounded-full" type="button" aria-label="Ga naar Super Charlie" data-slide-index="3"></button>
+            <button class="w-2 h-2 bg-white/50 rounded-full" type="button" aria-label="Ga naar Extra film" data-slide-index="4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-2">Kies de Film</h2>
+          <p class="text-gray-300">stem op de film die je vrijdag wilt zien</p>
+        </div>
+
+        <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group cursor-pointer flex flex-col h-full">
+            <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+              <img src="css_zip_import/img/films/Aladdin2.png" alt="Aladdin" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <h3 class="font-bold text-lg mb-3">Aladdin</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">Stem op deze film</button>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer flex flex-col h-full">
+            <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+              <img src="css_zip_import/img/films/avatar.png" alt="Avatar" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <h3 class="font-bold text-lg mb-3">Avatar: Fire and Ash</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">Stem op deze film</button>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer flex flex-col h-full">
+            <div class="relative overflow-hidden rounded-lg mb-4 bg-gray-900 flex-grow">
+              <img src="css_zip_import/img/films/Project Hail Mary.png" alt="Project Hail Mary" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <h3 class="font-bold text-lg mb-3">Project Hail Mary</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">Stem op deze film</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:hidden overflow-x-auto pb-4">
+          <div class="flex gap-4" style="scroll-behavior: smooth;">
+            <div class="flex-shrink-0 w-52 group cursor-pointer">
+              <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                <img src="css_zip_import/img/films/Aladdin2.png" alt="Aladdin" class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+              </div>
+              <h3 class="font-bold text-md mb-2">Aladdin</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">Stem op deze film</button>
+            </div>
+
+            <div class="flex-shrink-0 w-52 group cursor-pointer">
+              <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                <img src="css_zip_import/img/films/avatar.png" alt="Avatar" class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+              </div>
+              <h3 class="font-bold text-md mb-2">Avatar: Fire and Ash</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">Stem op deze film</button>
+            </div>
+
+            <div class="flex-shrink-0 w-52 group cursor-pointer">
+              <div class="relative overflow-hidden rounded-lg mb-3 bg-gray-900">
+                <img src="css_zip_import/img/films/Project Hail Mary.png" alt="Project Hail Mary" class="w-full h-64 object-cover group-hover:scale-105 transition-transform">
+              </div>
+              <h3 class="font-bold text-md mb-2">Project Hail Mary</h3>
+              <button data-vote-button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 text-sm rounded transition">Stem op deze film</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-900 py-8 sm:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold">FILM<span class="text-red-600">PLANNING</span></h2>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+          <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition">Vandaag</button>
+          <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">Morgen</button>
+          <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">Za 15</button>
+          <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition">Zo 16</button>
+        </div>
+
+        <div class="hidden md:block overflow-x-auto">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="border-b-2 border-gray-700">
+                <th class="text-left py-4 px-4 font-bold text-gray-300">Film</th>
+                <th class="text-left py-4 px-4 font-bold text-gray-300">Leeftijd</th>
+                <th class="text-left py-4 px-4 font-bold text-gray-300">Taal</th>
+                <th class="text-left py-4 px-4 font-bold text-gray-300">Speeltijden</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-6 px-4"><p class="font-bold text-lg">Aladdin</p></td>
+                <td class="py-6 px-4"><span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span></td>
+                <td class="py-6 px-4"><span class="text-gray-300 text-sm">NL gesproken</span></td>
+                <td class="py-6 px-4">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:30</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">15:15</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">18:00</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:30</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-6 px-4"><p class="font-bold text-lg">Avatar: Fire and Ash</p></td>
+                <td class="py-6 px-4"><span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span></td>
+                <td class="py-6 px-4"><span class="text-gray-300 text-sm">NL ondertiteld</span></td>
+                <td class="py-6 px-4">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">10:45</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:00</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">16:30</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">20:00</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-6 px-4"><p class="font-bold text-lg">Project Hail Mary</p></td>
+                <td class="py-6 px-4"><span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span></td>
+                <td class="py-6 px-4"><span class="text-gray-300 text-sm">NL ondertiteld</span></td>
+                <td class="py-6 px-4">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">09:30</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">12:15</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">17:30</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">22:30</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-6 px-4"><p class="font-bold text-lg">Super Charlie</p></td>
+                <td class="py-6 px-4"><span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span></td>
+                <td class="py-6 px-4"><span class="text-gray-300 text-sm">NL gesproken</span></td>
+                <td class="py-6 px-4">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">13:30</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">14:45</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">19:00</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-600 transition">21:00</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="md:hidden space-y-4">
+          <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-bold text-lg">Aladdin</h3>
+                <p class="text-gray-300 text-sm">1u 30min &middot; NL gesproken</p>
+              </div>
+              <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">6+</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:30</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">15:15</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">18:00</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">21:30</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-bold text-lg">Avatar: Fire and Ash</h3>
+                <p class="text-gray-300 text-sm">2u 44min &middot; NL ondertiteld</p>
+              </div>
+              <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">10:45</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">13:00</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">16:30</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">20:00</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-4 space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-bold text-lg">Project Hail Mary</h3>
+                <p class="text-gray-300 text-sm">2u 12min &middot; NL ondertiteld</p>
+              </div>
+              <span class="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">12+</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">09:30</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">12:15</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">17:30</span>
+              <span class="bg-gray-700 text-white px-3 py-1 rounded text-xs cursor-pointer hover:bg-gray-600 transition">22:30</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

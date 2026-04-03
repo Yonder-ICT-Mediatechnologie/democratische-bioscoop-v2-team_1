@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+  <style>
+    .admin-main {
+      padding: 60px 0 80px;
+    }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .admin-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: 0.06em;
+      margin: 0;
+    }
+
+    .admin-title span { color: var(--accent); }
+
+    .admin-uitlog {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .admin-uitlog:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Stemresultaten ── */
+    .admin-sectie {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .admin-sectie h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      margin: 0 0 24px;
+      color: var(--text);
+    }
+
+    .admin-sectie h2 span { color: var(--accent); }
+
+    .stemresultaat-lijst {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stemresultaat-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+
+    .stemresultaat-item.winnaar {
+      background: rgba(237, 40, 40, 0.15);
+      border: 1px solid rgba(237, 40, 40, 0.4);
+    }
+
+    .stemresultaat-naam {
+      flex: 1;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .stemresultaat-studio {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .stemresultaat-balk-wrapper {
+      flex: 2;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .stemresultaat-balk {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .stemresultaat-getal {
+      font-weight: 700;
+      font-size: 1.1rem;
+      min-width: 60px;
+      text-align: right;
+      color: var(--text);
+    }
+
+    .winnaar-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* ── Films beheren ── */
+    .films-lijst {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .film-rij {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .film-rij__naam { flex: 1; font-weight: 600; }
+    .film-rij__studio { color: var(--muted); font-size: 0.88rem; }
+    .film-rij__id {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: monospace;
+      background: rgba(0,0,0,0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .verwijder-knop {
+      background: transparent;
+      border: 1px solid rgba(237, 40, 40, 0.4);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: 'Barlow', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .verwijder-knop:hover { background: rgba(237, 40, 40, 0.15); }
+
+    /* ── Film toevoegen formulier ── */
+    .toevoeg-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    @media (max-width: 700px) {
+      .toevoeg-form { grid-template-columns: 1fr; }
+    }
+
+    .toevoeg-form input {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 12px 16px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .toevoeg-form input:focus { border-color: var(--accent); }
+    .toevoeg-form input::placeholder { color: var(--muted); }
+
+    .toevoeg-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .toevoeg-knop {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .toevoeg-knop:hover { background: var(--accent-soft); }
+
+    .admin-melding {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      min-height: 1.2em;
+    }
+
+    .totaal-tekst {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .leeg-tekst {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body class="page-account">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Panda Cinema home">
+        <span class="brand-mark">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Cinema logo">
+        </span>
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-links">
+          <li><a href="index.html">home</a></li>
+          <li><a href="films.html">films</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="account-button" href="admin.html" aria-label="Admin dashboard"></a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+      <div class="admin-header">
+        <h1 class="admin-title">ADMIN <span>DASHBOARD</span></h1>
+        <button class="admin-uitlog" id="uitlog-knop">Uitloggen</button>
+      </div>
+
+      <!-- Stemresultaten -->
+      <div class="admin-sectie">
+        <h2>STEM<span>RESULTATEN</span></h2>
+        <p class="totaal-tekst" id="totaal-tekst">Laden...</p>
+        <div class="stemresultaat-lijst" id="stemresultaat-lijst">
+          <!-- Dynamisch geladen -->
+        </div>
+      </div>
+
+      <!-- Films beheren -->
+      <div class="admin-sectie">
+        <h2>FILMS <span>BEHEREN</span></h2>
+
+        <div class="films-lijst" id="films-lijst">
+          <!-- Dynamisch geladen -->
+        </div>
+
+        <h3 style="font-size:1rem; font-weight:700; margin: 0 0 16px; color: var(--muted); letter-spacing:0.04em;">FILM TOEVOEGEN</h3>
+        <form class="toevoeg-form" id="toevoeg-form">
+          <label>
+            Titel
+            <input type="text" name="title" placeholder="bijv. Aladdin" required>
+          </label>
+          <label>
+            Studio
+            <input type="text" name="studio" placeholder="bijv. Disney" required>
+          </label>
+          <label>
+            Film-ID
+            <input type="text" name="film_id" placeholder="bijv. aladdin" required>
+          </label>
+          <button class="toevoeg-knop" type="submit">+ Toevoegen</button>
+        </form>
+        <p class="admin-melding" id="toevoeg-melding"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Inloggen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-login">
+  <main class="login-page-main">
+    <section class="login-page-section">
+      <div class="container login-page-layout">
+        <div class="login-logo-mark" aria-hidden="true">🐼</div>
+        <h1>Inloggen</h1>
+        <p class="login-page-subtitle">Welkom terug bij Panda Cinema</p>
+
+        <form class="login-card" data-login-form>
+          <label class="sr-only" for="login-identifier">Gebruikersnaam of e-mail</label>
+          <input id="login-identifier" type="text" name="identifier" placeholder="Gebruikersnaam/email*" required>
+
+          <label class="sr-only" for="login-password">Wachtwoord</label>
+          <input id="login-password" type="password" name="password" placeholder="Wachtwoord*" required>
+
+          <button class="login-submit-button" type="submit">Log in</button>
+
+          <a class="login-register-link" href="registreren.html">Nog geen account? registreer</a>
+          <p class="login-feedback" data-login-feedback></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Registreren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-register">
+  <main class="register-page-main">
+    <section class="register-page-section">
+      <div class="container register-page-layout">
+        <div class="register-logo-mark" aria-hidden="true">🐼</div>
+        <h1>Registreren</h1>
+        <p class="register-page-subtitle">Maak een gratis account aan</p>
+
+        <form class="register-card" data-register-form>
+          <label class="sr-only" for="register-username">Gebruikersnaam</label>
+          <input id="register-username" type="text" name="username" placeholder="Gebruikersnaam*" required>
+
+          <label class="sr-only" for="register-email">E-mail</label>
+          <input id="register-email" type="email" name="email" placeholder="E-mail*" required>
+
+          <label class="sr-only" for="register-password">Wachtwoord</label>
+          <input id="register-password" type="password" name="password" placeholder="Wachtwoord*" required>
+
+          <label class="sr-only" for="register-password-repeat">Herhaal wachtwoord</label>
+          <input id="register-password-repeat" type="password" name="passwordRepeat" placeholder="Herhaal Wachtwoord*" required>
+
+          <button class="register-submit-button" type="submit">Registreer</button>
+
+          <a class="register-login-link" href="login.html">Ga naar login</a>
+          <p class="register-feedback" data-register-feedback></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="registreren.js"></script>
+</body>
+</html>

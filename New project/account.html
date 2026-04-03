@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Mijn Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-account">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Panda Cinema home">
+        <span class="brand-mark">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Cinema logo">
+        </span>
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-links">
+          <li><a href="index.html">home</a></li>
+          <li><a href="films.html">films</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="account-button" href="account.html" aria-label="Mijn account"></a>
+    </div>
+  </header>
+
+  <main class="account-page-main">
+    <section class="account-section">
+      <div class="container account-layout">
+        <section class="account-profile">
+          <h1 class="account-title">MIJN <span>ACCOUNT</span></h1>
+          <h2 class="account-greeting" data-account-greeting>Welkom, Naam</h2>
+
+          <form class="account-form" data-account-form>
+            <div class="account-form__row">
+              <label class="account-field">
+                <span>Voornaam</span>
+                <input type="text" name="firstName" placeholder="Naam">
+              </label>
+
+              <label class="account-field">
+                <span>Achternaam</span>
+                <input type="text" name="lastName" placeholder="Achternaam">
+              </label>
+            </div>
+
+            <label class="account-field">
+              <span>E-mailadres</span>
+              <input type="email" name="email" placeholder="Username@gmail.com">
+            </label>
+
+            <label class="account-field">
+              <span>Telefoonnummer</span>
+              <input type="tel" name="phone" placeholder="+31 6 11 en de rest komt vanzelf">
+            </label>
+
+            <label class="account-field">
+              <span>Geboortedatum</span>
+              <input type="text" name="birthDate" placeholder="799 B.C.">
+            </label>
+
+            <div class="account-actions">
+              <button class="account-action account-action--primary" type="submit">Opslaan</button>
+              <button class="account-action account-action--secondary" type="button" data-account-cancel>Anuleren</button>
+            </div>
+          </form>
+
+          <p class="account-message" data-account-message></p>
+        </section>
+
+        <aside class="account-history">
+          <h2 class="account-history__title">RECENTE <span>AANKOPEN</span></h2>
+          <div class="purchase-list" data-purchase-list></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="account.js"></script>
+</body>
+</html>

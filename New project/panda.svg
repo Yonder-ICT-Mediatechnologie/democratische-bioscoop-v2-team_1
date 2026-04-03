@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Panda in bamboebos</title>
+  <desc id="desc">Een vriendelijke panda zit in een groen bamboebos onder een zachte lucht.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d9f0ff"/>
+      <stop offset="100%" stop-color="#f6fbff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a5d98e"/>
+      <stop offset="100%" stop-color="#65a85a"/>
+    </linearGradient>
+    <radialGradient id="furLight" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e7ecef"/>
+    </radialGradient>
+    <radialGradient id="furDark" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#30363b"/>
+      <stop offset="100%" stop-color="#111417"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#18321f" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#sky)"/>
+  <circle cx="240" cy="160" r="72" fill="#fffdf3" opacity="0.9"/>
+  <ellipse cx="600" cy="760" rx="700" ry="210" fill="url(#ground)"/>
+  <ellipse cx="920" cy="760" rx="420" ry="120" fill="#5d9b54" opacity="0.35"/>
+  <ellipse cx="250" cy="785" rx="310" ry="95" fill="#5d9b54" opacity="0.28"/>
+
+  <g opacity="0.9">
+    <rect x="92" y="160" width="28" height="620" rx="14" fill="#6fb762"/>
+    <rect x="102" y="150" width="8" height="630" rx="4" fill="#4a8845" opacity="0.75"/>
+    <path d="M119 250c56-44 115-50 172-14-74 6-131 22-172 14Z" fill="#7bc96a"/>
+    <path d="M121 330c78-30 136-26 190 22-81-13-145-13-190-22Z" fill="#8fd676"/>
+    <path d="M121 430c66-34 122-34 186 14-76-2-138-7-186-14Z" fill="#7cc965"/>
+    <path d="M120 540c92-42 158-40 214 18-98-8-169-13-214-18Z" fill="#90d87a"/>
+  </g>
+
+  <g opacity="0.72">
+    <rect x="1010" y="120" width="30" height="650" rx="15" fill="#74bd67"/>
+    <rect x="1020" y="110" width="8" height="660" rx="4" fill="#4b8848" opacity="0.78"/>
+    <path d="M1036 230c-82-49-151-54-214-11 92 6 164 14 214 11Z" fill="#8ad473"/>
+    <path d="M1036 340c-62-34-129-34-209 18 98-3 167-12 209-18Z" fill="#7ecb67"/>
+    <path d="M1036 460c-70-35-132-32-214 22 108-9 183-18 214-22Z" fill="#96db80"/>
+  </g>
+
+  <g opacity="0.48">
+    <rect x="900" y="200" width="22" height="560" rx="11" fill="#6eb965"/>
+    <rect x="930" y="140" width="24" height="620" rx="12" fill="#78c56f"/>
+    <rect x="210" y="210" width="20" height="550" rx="10" fill="#72bf69"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="600" cy="730" rx="205" ry="64" fill="#37533b" opacity="0.22"/>
+
+    <circle cx="600" cy="365" r="168" fill="url(#furLight)"/>
+    <circle cx="492" cy="248" r="72" fill="url(#furDark)"/>
+    <circle cx="708" cy="248" r="72" fill="url(#furDark)"/>
+    <ellipse cx="600" cy="530" rx="188" ry="170" fill="url(#furLight)"/>
+
+    <ellipse cx="508" cy="365" rx="52" ry="84" transform="rotate(24 508 365)" fill="url(#furDark)"/>
+    <ellipse cx="692" cy="365" rx="52" ry="84" transform="rotate(-24 692 365)" fill="url(#furDark)"/>
+    <ellipse cx="600" cy="418" rx="84" ry="62" fill="#f6fbff"/>
+    <ellipse cx="600" cy="438" rx="30" ry="22" fill="#1f2328"/>
+    <path d="M582 460c11 18 24 27 37 27 15 0 26-9 37-27" fill="none" stroke="#1f2328" stroke-width="9" stroke-linecap="round"/>
+
+    <circle cx="550" cy="370" r="12" fill="#111417"/>
+    <circle cx="650" cy="370" r="12" fill="#111417"/>
+    <circle cx="546" cy="366" r="4" fill="#ffffff" opacity="0.85"/>
+    <circle cx="646" cy="366" r="4" fill="#ffffff" opacity="0.85"/>
+
+    <ellipse cx="462" cy="568" rx="64" ry="108" transform="rotate(28 462 568)" fill="url(#furDark)"/>
+    <ellipse cx="738" cy="568" rx="64" ry="108" transform="rotate(-28 738 568)" fill="url(#furDark)"/>
+    <ellipse cx="502" cy="734" rx="74" ry="82" fill="url(#furDark)"/>
+    <ellipse cx="698" cy="734" rx="74" ry="82" fill="url(#furDark)"/>
+    <ellipse cx="500" cy="748" rx="42" ry="30" fill="#20252a"/>
+    <ellipse cx="700" cy="748" rx="42" ry="30" fill="#20252a"/>
+
+    <g transform="rotate(-18 760 555)">
+      <rect x="736" y="430" width="28" height="250" rx="14" fill="#76be67"/>
+      <rect x="746" y="430" width="8" height="250" rx="4" fill="#4a8a45" opacity="0.75"/>
+      <path d="M760 480c82-40 140-38 194 18-95-8-160-16-194-18Z" fill="#86d46f"/>
+      <path d="M760 560c68-30 134-26 198 24-95-8-162-16-198-24Z" fill="#97df7f"/>
+    </g>
+  </g>
+
+  <g opacity="0.15">
+    <circle cx="520" cy="300" r="22" fill="#ffffff"/>
+    <circle cx="440" cy="420" r="16" fill="#ffffff"/>
+    <circle cx="645" cy="255" r="18" fill="#ffffff"/>
+  </g>
+</svg>

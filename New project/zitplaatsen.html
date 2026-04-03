@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Cinema | Stoelen Selectie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body class="page-seats">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Panda Cinema home">
+        <span class="brand-mark">
+          <img src="css_zip_import/img/Logo.png" alt="Panda Cinema logo">
+        </span>
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-links">
+          <li><a href="index.html">home</a></li>
+          <li><a href="films.html">films</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="account-button" href="login.html" aria-label="Mijn account"></a>
+    </div>
+  </header>
+
+  <main class="seats-page-main">
+    <section class="seats-section">
+      <div class="container seats-layout">
+
+        <!-- ── Film & tijdstip kiezer ── -->
+        <div class="show-picker" id="show-picker">
+          <div class="show-picker__group">
+            <label class="show-picker__label" for="film-dropdown">
+              <span class="show-picker__step">01</span>Kies je film
+            </label>
+            <div class="show-picker__select-wrap">
+              <select id="film-dropdown" class="show-picker__select">
+                <option value="">— Selecteer een film —</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="show-picker__group show-picker__times-group" id="times-group" style="display:none">
+            <label class="show-picker__label">
+              <span class="show-picker__step">02</span>Kies een voorstelling
+            </label>
+            <div class="show-picker__times" id="show-picker-times"></div>
+          </div>
+        </div>
+
+        <div class="seats-header">
+          <div>
+            <h1>Kaartverkoop - stoelen selectie</h1>
+            <p class="seats-summary" data-seat-summary>Selecteer jouw stoelen voor de voorstelling.</p>
+          </div>
+
+          <div class="seat-legend" aria-label="Legenda">
+            <div class="seat-legend__item">
+              <span class="seat seat--available seat--legend" aria-hidden="true"></span>
+              <span>beschikbaar</span>
+            </div>
+            <div class="seat-legend__item">
+              <span class="seat seat--selected seat--legend" aria-hidden="true"></span>
+              <span>geselecteerd</span>
+            </div>
+            <div class="seat-legend__item">
+              <span class="seat seat--occupied seat--legend" aria-hidden="true"></span>
+              <span>bezet</span>
+            </div>
+            <div class="seat-legend__item">
+              <span class="seat seat--unavailable seat--legend" aria-hidden="true"></span>
+              <span>niet beschikbaar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="seat-map-shell">
+          <div class="seat-map" data-seat-map aria-label="Stoelenselectie"></div>
+        </div>
+
+        <div class="screen-zone" aria-hidden="true">
+          <span class="screen-label">scherm</span>
+          <div class="screen-curve"></div>
+        </div>
+
+        <div class="seats-actions">
+          <button class="pay-button" data-pay-button type="button" disabled>Verder naar betalen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="zitplaatsen.js"></script>
+</body>
+</html>

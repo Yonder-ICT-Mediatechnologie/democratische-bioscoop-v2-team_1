@@ -1,0 +1,757 @@
+/* ═══════════════════════════════════════════════════
+   PANDA CINEMA — VISUELE VERBETERINGEN
+   Voegt verfijning toe bovenop de bestaande huisstijl
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  --glass: rgba(20, 16, 14, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glow-accent: 0 0 48px rgba(237, 40, 40, 0.18);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-med: 0.3s var(--ease-smooth);
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.18); }
+::-webkit-scrollbar-thumb { background: rgba(237,40,40,0.35); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(237,40,40,0.6); }
+
+/* ── Navigatie ───────────────────────────────────── */
+.nav-links a {
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  transition: color var(--transition-fast);
+}
+.nav-links a:hover,
+.nav-links a.is-current { color: #fff; }
+
+.account-button {
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+.account-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px rgba(237, 40, 40, 0.25);
+}
+
+/* ══════════════════════════════════════════════════
+   LOGIN PAGINA
+   ══════════════════════════════════════════════════ */
+
+.page-login {
+  background:
+    linear-gradient(160deg, rgba(8, 6, 5, 0.97) 0%, rgba(18, 14, 13, 0.95) 100%),
+    url("css_zip_import/img/Aladdin.png") center / cover no-repeat fixed;
+}
+
+.login-page-main {
+  background: radial-gradient(ellipse at 50% 0%, rgba(237, 40, 40, 0.08) 0%, transparent 60%);
+}
+
+.login-page-layout {
+  text-align: center;
+  gap: 0;
+}
+
+.login-logo-mark {
+  display: block;
+  width: 80px;
+  height: 62px;
+  margin: 0 auto 20px;
+  background: url("css_zip_import/img/Logo.png") center / contain no-repeat;
+  filter: drop-shadow(0 4px 12px rgba(237,40,40,0.3));
+}
+
+.login-page-layout h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.login-page-subtitle {
+  display: block;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.login-card {
+  position: relative;
+  width: min(100%, 400px);
+  gap: 14px;
+  padding: 40px 38px 32px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    var(--glow-accent);
+}
+
+.login-card input {
+  height: 50px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.login-card input:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: rgba(237, 40, 40, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(237, 40, 40, 0.12);
+}
+
+.login-card input::placeholder { color: rgba(255, 255, 255, 0.38); }
+
+.login-submit-button {
+  height: 52px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #ff4942 0%, #cc1f1f 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(204, 31, 31, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.login-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(204, 31, 31, 0.48);
+  background: linear-gradient(135deg, #ff5c55 0%, #e02525 100%);
+}
+
+.login-submit-button:active { transform: translateY(0); }
+
+.login-register-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  transition: color var(--transition-fast);
+}
+
+.login-register-link:hover { color: rgba(255, 255, 255, 0.85); }
+
+.login-feedback {
+  margin: -2px 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+/* ══════════════════════════════════════════════════
+   REGISTREER PAGINA
+   ══════════════════════════════════════════════════ */
+
+.page-register {
+  background:
+    linear-gradient(160deg, rgba(8, 6, 5, 0.97) 0%, rgba(18, 14, 13, 0.95) 100%),
+    url("css_zip_import/img/films/avatar.png") center / cover no-repeat fixed;
+}
+
+.register-page-main {
+  background: radial-gradient(ellipse at 50% 0%, rgba(237, 40, 40, 0.08) 0%, transparent 60%);
+}
+
+.register-page-layout {
+  text-align: center;
+  gap: 0;
+}
+
+.register-logo-mark {
+  display: block;
+  width: 80px;
+  height: 62px;
+  margin: 0 auto 20px;
+  background: url("css_zip_import/img/Logo.png") center / contain no-repeat;
+  filter: drop-shadow(0 4px 12px rgba(237,40,40,0.3));
+}
+
+.register-page-layout h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.register-page-subtitle {
+  display: block;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.register-card {
+  position: relative;
+  width: min(100%, 420px);
+  gap: 12px;
+  padding: 40px 38px 32px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    var(--glow-accent);
+}
+
+.register-card input {
+  height: 50px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.register-card input:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+.register-card input:focus {
+  outline: none;
+  border-color: rgba(237, 40, 40, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(237, 40, 40, 0.12);
+}
+
+.register-card input::placeholder { color: rgba(255, 255, 255, 0.38); }
+
+.register-submit-button {
+  height: 52px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #ff4942 0%, #cc1f1f 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(204, 31, 31, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.register-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(204, 31, 31, 0.48);
+  background: linear-gradient(135deg, #ff5c55 0%, #e02525 100%);
+}
+
+.register-submit-button:active { transform: translateY(0); }
+
+.register-login-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  transition: color var(--transition-fast);
+}
+
+.register-login-link:hover { color: rgba(255, 255, 255, 0.85); }
+
+.register-feedback {
+  margin: -2px 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+/* ══════════════════════════════════════════════════
+   STEMPAGINA
+   ══════════════════════════════════════════════════ */
+
+.vote-page-main { padding: 48px 0 100px; }
+
+.vote-intro {
+  padding: 0 0 64px;
+  position: relative;
+}
+
+.vote-intro::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(237,40,40,0.3), transparent);
+}
+
+.vote-intro__content h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.vote-intro__content > p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.vote-status {
+  margin-top: 20px;
+  padding: 10px 18px;
+  display: inline-block;
+  border-radius: 8px;
+  background: rgba(237, 40, 40, 0.1);
+  border: 1px solid rgba(237, 40, 40, 0.2);
+  color: var(--accent-soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.vote-grid {
+  gap: 32px;
+  max-width: 860px;
+}
+
+/* Vote card poster - rondere hoeken */
+.vote-card__poster {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.vote-card:hover .vote-card__poster,
+.vote-card:focus-within .vote-card__poster {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Geselecteerde kaart met rode gloed en ring */
+.vote-card.is-selected .vote-card__poster {
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.3),
+    0 0 0 3px var(--accent),
+    0 0 60px rgba(237, 40, 40, 0.28);
+  transform: translateY(-4px);
+}
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 3px var(--accent), 0 0 40px rgba(237,40,40,0.3); }
+  50%  { box-shadow: 0 0 0 4px var(--accent), 0 0 60px rgba(237,40,40,0.45); }
+  100% { box-shadow: 0 0 0 3px var(--accent), 0 0 40px rgba(237,40,40,0.3); }
+}
+
+.vote-card.is-selected .vote-card__poster {
+  animation: pulseRing 2.5s ease-in-out infinite;
+}
+
+.vote-card__button {
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  margin-top: -1px;
+  width: 100%;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.vote-card__button:hover,
+.vote-card__button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(255, 71, 57, 0.32);
+}
+
+.vote-card.is-selected .vote-card__button {
+  background: linear-gradient(135deg, #ff5c55, #cc1f1f);
+  box-shadow: 0 16px 32px rgba(204, 31, 31, 0.3);
+}
+
+/* ══════════════════════════════════════════════════
+   ACCOUNT PAGINA
+   ══════════════════════════════════════════════════ */
+
+.account-page-main { padding: 48px 0 100px; }
+
+.account-title {
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.account-greeting {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+}
+
+/* Form labels */
+.account-field span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Form inputs */
+.account-field input {
+  height: 50px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.account-field input:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.account-field input:focus {
+  outline: none;
+  border-color: rgba(237, 40, 40, 0.55);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(237, 40, 40, 0.10);
+}
+
+.account-field input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+/* Knoppen */
+.account-action {
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.account-action--primary {
+  background: linear-gradient(135deg, #ff4942, #cc1f1f);
+  box-shadow: 0 10px 28px rgba(204, 31, 31, 0.25);
+}
+
+.account-action--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(204, 31, 31, 0.38);
+  background: linear-gradient(135deg, #ff5c55, #e02525);
+}
+
+.account-action--secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(110, 108, 108, 0.6);
+}
+
+/* Aankopen kaarten */
+.account-history__title {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.purchase-list { gap: 14px; }
+
+.purchase-card {
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.purchase-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateX(3px);
+}
+
+.purchase-card__poster {
+  min-height: 84px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-card__content h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 5px;
+}
+
+.purchase-card__content p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.purchase-card__footer { font-size: 0.8rem; }
+
+.purchase-seat-pill {
+  min-height: 20px;
+  padding: 0 7px;
+  font-size: 0.68rem;
+  background: rgba(237, 40, 40, 0.10);
+  border-color: rgba(237, 40, 40, 0.22);
+  color: var(--accent-soft);
+  border-radius: 6px;
+}
+
+/* ══════════════════════════════════════════════════
+   FILM OVERZICHT — CATALOG
+   ══════════════════════════════════════════════════ */
+
+.catalog-section h2 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.92);
+}
+
+.movie-card__poster {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.movie-card__poster:hover,
+.movie-card__poster:focus-visible {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.36);
+}
+
+.movie-card__meta h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════
+   ALGEMENE KNOP VERBETERINGEN
+   ══════════════════════════════════════════════════ */
+
+.ticket-button {
+  border-radius: 14px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ticket-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 36px rgba(255, 71, 57, 0.38);
+}
+
+.pay-button {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pay-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 36px rgba(34, 72, 128, 0.32);
+}
+
+.checkout-button {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.checkout-button--pay:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 36px rgba(223, 48, 39, 0.36);
+}
+
+.contact-submit-button {
+  height: 46px;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.04em;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(235, 37, 36, 0.3);
+}
+
+/* ══════════════════════════════════════════════════
+   SCHEMA TABEL VERBETERD
+   ══════════════════════════════════════════════════ */
+
+.schedule-table {
+  border-radius: 18px;
+  background: rgba(18, 14, 13, 0.80);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+}
+
+.schedule-row {
+  border-radius: 8px;
+  transition: background var(--transition-fast);
+}
+
+.schedule-row:hover { background: rgba(255,255,255,0.03); }
+
+.time-pill {
+  border-radius: 8px;
+  transition: background var(--transition-fast);
+}
+
+.time-pill:hover { background: rgba(237, 40, 40, 0.15); }
+
+/* ══════════════════════════════════════════════════
+   CONTACT FORM VERBETERD
+   ══════════════════════════════════════════════════ */
+
+.contact-form-card {
+  border-radius: var(--radius-lg);
+  background: rgba(12, 9, 8, 0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.35), var(--glow-accent);
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.contact-form-card input:hover,
+.contact-form-card textarea:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.contact-form-card input { height: 46px; padding: 0 14px; }
+.contact-form-card textarea { padding: 12px 14px; }
+
+/* ══════════════════════════════════════════════════
+   HERO VERBETERING
+   ══════════════════════════════════════════════════ */
+
+.hero-shell { border-radius: 24px; }
+
+.ticket-button::before {
+  border-radius: 5px;
+}
+
+/* Dots */
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  transition: transform 200ms ease, background 200ms ease, width 200ms ease;
+}
+
+.hero-dot.is-active {
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ══════════════════════════════════════════════════
+   FILM CARDS (home)
+   ══════════════════════════════════════════════════ */
+
+.film-card {
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ══════════════════════════════════════════════════
+   ZITPLAATSEN PAGINA
+   ══════════════════════════════════════════════════ */
+
+.screen-curve {
+  border-top-color: rgba(255,255,255,0.9);
+  box-shadow: 0 -4px 20px rgba(255,255,255,0.08);
+}
+
+/* ══════════════════════════════════════════════════
+   BESTELPAGINA — ORDER CARD
+   ══════════════════════════════════════════════════ */
+
+.order-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(50, 46, 44, 0.60);
+  backdrop-filter: blur(8px);
+}
+
+.order-card__poster { border-radius: 10px; }
+
+.summary-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.summary-card__head { padding: 18px 20px; }
+
+.payment-method {
+  border-radius: 10px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.payment-method:hover { transform: translateY(-2px); }
+
+/* ══════════════════════════════════════════════════
+   MOBIEL
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  .vote-grid { grid-template-columns: 1fr; max-width: 300px; }
+  .login-card, .register-card { padding: 32px 24px 28px; }
+  .account-form__row { grid-template-columns: 1fr; }
+}
